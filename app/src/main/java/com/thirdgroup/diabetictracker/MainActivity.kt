@@ -1,9 +1,6 @@
 package com.thirdgroup.diabetictracker
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.hardware.Sensor
-import android.hardware.SensorManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -49,6 +46,7 @@ import com.thirdgroup.diabetictracker.theme.StoreAppTheme
 
 class MainActivity : ComponentActivity() {
     private val viewModel: StepCounterViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
