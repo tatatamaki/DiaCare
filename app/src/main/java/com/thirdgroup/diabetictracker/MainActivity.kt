@@ -49,8 +49,6 @@ import com.thirdgroup.diabetictracker.theme.StoreAppTheme
 
 class MainActivity : ComponentActivity() {
     private val viewModel: StepCounterViewModel by viewModels()
-    private val sensorManager: SensorManager by lazy { getSystemService(Context.SENSOR_SERVICE) as SensorManager }
-    private var stepSensor: Sensor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
