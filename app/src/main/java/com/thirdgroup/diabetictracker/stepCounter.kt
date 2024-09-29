@@ -51,8 +51,8 @@ class StepCounterActivity : ComponentActivity(), SensorEventListener {
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
+        Log.d("StepCounterActivity", "Step sensor initialized as TYPE_STEP_COUNTER")
 
-        // Check for sensor availability
         if (stepSensor == null) {
             Log.e("StepCounterActivity", "Step sensor not available")
         }
@@ -170,7 +170,7 @@ class StepCounterActivity : AppCompatActivity(), SensorEventListener {
     private fun registerStepSensorListener() {
         stepSensor?.let {
             sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
-            Log.d("StepCounterActivity", "Step sensor initialized as TYPE_STEP_COUNTER")
+
         } ?: run {
             viewModel.setError() // Show error if sensor is not available
             Log.d("StepCounterActivity", "Step sensor not available")

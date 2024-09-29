@@ -54,5 +54,4 @@ fun BloodglucoseTracking(navController: NavHostController) {
             Text(stringResource(id = R.string.save))
         }
     }
-
 }

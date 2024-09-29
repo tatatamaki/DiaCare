@@ -81,7 +81,7 @@ fun InterfaceCategories(navController: NavHostController, viewModel: StepCounter
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun DefaultPreview(navController: NavHostController) {
-    val workOutCategories = listOf("Sugar Intake", "Steps", "Water Intake")
+    val workOutCategories = listOf("Blood Glucose", "Steps", "Sugar intake")
     StoreAppTheme {
         Scaffold(
             topBar = {
@@ -159,7 +159,7 @@ fun DefaultPreview(navController: NavHostController) {
                             selectedContentColor = Color.White,
                             unselectedContentColor = Color.LightGray,
                             selected = true,
-                            onClick = { /*TODO*/ },
+                            onClick = { navController.navigate(route = "defaultPreview") },
                             icon = {
                                 Icon(
                                     imageVector = Icons.Filled.Person,
@@ -384,6 +384,7 @@ fun WorkOutType(category: String, navController: NavHostController) {
             when (category) {
                 "Sugar Intake" -> navController.navigate("sugarIntake")
                 "Steps" -> navController.navigate("stepCounter")
+                "Blood Glucose" -> navController.navigate("bloodGlucose")
                 else -> navController.navigate("defaultPreview") // fallback
             }
         },
